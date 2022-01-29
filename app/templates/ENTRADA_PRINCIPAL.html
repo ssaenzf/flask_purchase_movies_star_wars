@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock%}
+{% block Catalogo %} class="active" {% endblock %}
+{% block content %}
+
+<div class= "CUERPO">
+
+	<div class= "CONTAINER_CATALOGO">
+		<ul>
+		{% for item in movies %}
+			<li>
+				<a href="info/{{ item.titulo }}" >
+					<img alt="{{ item.titulo }}" src="{{url_for('static', filename=item.poster)}}" height="300" width="200"/>
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+</div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock%}
+{% block Historial %} class="active" {% endblock %}
+{% block content %}
+
+
+		<table>
+  <tr>
+    <th>Title</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+  </tr>
+		{% for item in historial %}
+			{% for pelicula in item['peliculas'] %}
+  <tr>
+    <td>{{ pelicula['titulo'] }}</td>
+    <td>{{ pelicula['unidades'] }}</td>
+	  <td></td>
+  </tr>
+	  {% endfor %}
+			<tr>
+	  <td></td>
+    	<td></td>
+	  <td>{{ item['precio'] }}</td>
+	  {% endfor %}
+  </tr>
+
+		</table>
+
+
+
+{% endblock %}

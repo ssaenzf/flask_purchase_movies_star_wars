@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>{% block title %} {% endblock %}- VideoClub</title>
+    <!-- Uso de url_for para obtener la ruta de elementos de la página -->
+    <link rel="stylesheet" type="text/css" href= {{url_for('static', filename='estilo.css') }} />
+	{% block script %} {% endblock %}
+</head>
+
+
+<body>
+<div class="Header">
+	<div>
+		<h1> {{header}} </h1>
+	</div>
+	<div class="BotonesHeader">
+		{% if not 'user' in session %}
+
+			<input type="button" onclick="location.href='login'" value="LOG IN">
+			<input type="button" onclick="location.href='register'" value="REGISTER" >
+
+		{%else %}
+			{{ session['user'] }}<br>
+
+			<input type="button" onclick="location.href='logout'" value="LOG OUT">
+
+			<a href="{{ url_for('historial') }}">
+				HISTORIAL
+			</a>
+		{% endif %}
+	</div>
+	<div class="Carrito">
+		<a href="{{ url_for('carrito_usuario') }}" >
+			<img alt="carrito" src="/static/imagenes/carrito.jpg" height="50" width="50"/>
+		</a>
+	</div>
+</div>
+
+
+
+	<div class="row">
+		<div class="column side">
+			<div class= "MenuLateral">
+				<a href="{{ url_for('index') }}" {%block Catalogo%}{%endblock%}>Catálogo</a>
+				<a href="{{ url_for('carrito_usuario') }}"{%block Carrito%}{%endblock%}>Carrito</a>
+				<a href="{{ url_for('historial') }}"{%block Historial%}{%endblock%}>Historial</a>
+			</div>
+		</div>
+
+		<div class=" column center">
+			{% block content%} {% endblock %}
+		</div>
+	</div>
+
+</body>
+<div class="pie">
+	<footer> @copyright intended<br>
+	Contacto:<br>
+		e-mail: sergio.garcia-vaquero@estudiante.uam.es
+	</footer>
+</div>
+</html>
+
+
+
+

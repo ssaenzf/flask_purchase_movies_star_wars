@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{pelicula.titulo}}
+{% endblock%}
+
+{% block content %}
+    <div class="peli">
+        Titulo: {{ pelicula.titulo }}<br>
+        Director: {{ pelicula.director }}<br>
+        Año: {{ pelicula.año }}<br>
+        Categoria: {{pelicula.categoria}}<br>
+        Actores:<br><br>
+        {% for actor in pelicula.actores %}
+            Nombre: {{actor.nombre}}<br>
+            Personaje: {{ actor.personaje }}<br>
+            Foto : <img alt="{{ actor.nombre }}" src="{{url_for('static', filename=actor.foto)}}" height="200" width="100"/>
+            <br>
+    {% endfor %}
+        <br><br><br>Precio: {{ pelicula.precio }}<br>
+    </div>
+    <a href="anadircarrito/{{pelicula.titulo}}">
+        <input type="button" value="Comprar">
+    </a>
+    <a href="del/{{pelicula.titulo}}">
+        <input type="button" value="Quitar del Carrito">
+    </a>
+
+    {% endblock %}

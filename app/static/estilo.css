@@ -1,0 +1,107 @@
+body {
+	background-color: rgb(156,222,252);
+	
+	
+}
+
+h1 {
+  color: black;
+  font-family: verdana;
+  font-size: 300%;
+}
+
+div.Header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(6,145,208);
+    position: sticky;
+    top: 0;
+    
+}
+
+div.Carrito{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+
+}
+
+div.BotonesHeader {
+position: absolute;
+  top: 70px;
+  right: 3px;
+
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  
+}
+div.column.center{
+  padding: 25px;
+  margin-left: 25px;
+  
+}
+
+
+div.MenuLateral {
+  width: 150px;
+  position: sticky;
+  top: 150px;
+  
+}
+div.MenuLateral a {
+background-color: #eee;
+  color: black;
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+}
+
+div.MenuLateral a.active {
+  background-color: rgb(6,145,208);
+  color: white;
+}
+
+div.MenuLateral a:hover {
+  background-color: #ccc;
+}
+
+div.CONTAINER_CATALOGO li{
+	display: inline;
+	margin-left: 40px;
+	
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr{
+background-color: #f2f2f2
+}
+th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(6,145,208);
+  color: white;
+}
+div.peli{
+    background-color: #4CAF50;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+div.pie {
+background-color: grey;
+height: 70px;
+margin-top: 220px;
+
+}
+
+

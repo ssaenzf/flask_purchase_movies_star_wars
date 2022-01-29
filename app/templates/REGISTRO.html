@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block script %}
+<script src="static/javascript/forms.js"></script>
+{% endblock %}
+
+{% block title %}
+    {{ title }}
+{% endblock%}
+
+{% block content %}
+	<div class= "Registro">
+		<form method="POST" name="registerform" onsubmit="return validateForm()">
+			<h3>Registrarse</h3>
+  			<label>Nombre:</label>
+  			<input type="text" id="username" name="username"><br><br>
+			<label>Contraseña:</label>
+			<input type="password" id= "password" name="password" minlength="8"><br><br>
+            <label>Email:         </label>
+			<input type="email" id= "email" name="email"><br><br>
+            <label>TarjetaCredito:</label>
+			<input type="text" id= "tarjeta" name="tarjeta"><br><br>
+			<input type="submit"  value="Confirmar" id= "Confirmar" name= "Confirmar"><br><br>
+		</form>
+	</div>
+	{% endblock %}

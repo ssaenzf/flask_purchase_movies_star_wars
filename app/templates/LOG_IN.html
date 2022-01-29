@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock%}
+
+{% block content %}
+
+	<div class= "FORMULARIO">
+		<form method="post">
+			<h3>Log In</h3>
+			<br>
+  			<label>Usuario:   </label>
+  			<input type="text" id="username" name="username"><br><br>
+			<label>Contraseña:</label>
+			<input type="password" id= "password" name="password"><br><br>
+			<input type="submit"  value="Login"><br><br>
+		</form>>
+	</div>
+{% endblock %}
+

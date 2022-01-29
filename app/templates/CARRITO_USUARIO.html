@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock%}
+
+{% block Carrito %} class="active" {% endblock %}
+{% block content %}
+
+
+
+		<div class= "CUERPO">
+		<div class = "CONTAINER_CARRITO">
+
+					{% if 'carrito' in session and session['carrito']|length != 0 %}
+						<ul>
+						{% for pelicula in peliculas %}
+							{% for info in session['carrito'] %}
+								{% if info['titulo'] == pelicula.titulo %}
+									<li>
+									<a href="info/{{ pelicula.titulo }}">
+									{{ pelicula.titulo }}
+									</a>
+										Unidades: {{ info['unidades'] }}
+									</li>
+									<br>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+							<li>
+
+								Precio: {{ session['precioTotal'] }}
+							</li>
+
+						</ul>
+						{% if 'user' in session %}
+							Saldo restante: {{ saldo }}
+							{% if saldo > session['precioTotal'] %}
+								<a href="compracarrito">
+									<input type="button" value="ConfirmarCompra">
+								</a>
+							{% else %}
+								No tiene saldo suficiente para comprar todo el carrito
+							{%endif%}
+						{% else %}
+							Para finalizar su compra registrese o acceda con su usuario:
+							<a href="/register">
+								REGISTER
+							</a>
+							<a href="/login">
+								LOG IN
+							</a>
+
+						{% endif %}
+					{% else %}
+						<h2>COMPRA PALOMITAS... Y UNA PELICULA DEL CATÁLOGO!!!</h2>
+					{% endif %}
+		</div>
+		</div>
+{% endblock %}
+
